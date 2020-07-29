@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="DimTipoCreateDlg" widgetVar="DimTipoCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateDimTipoTitle}">
+            <h:form id="DimTipoCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{dimTipoController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateDimTipoLabel_skTipo}" for="skTipo" />
+                        <p:inputText id="skTipo" value="#{dimTipoController.selected.skTipo}" title="#{bundle.CreateDimTipoTitle_skTipo}" required="true" requiredMessage="#{bundle.CreateDimTipoRequiredMessage_skTipo}"/>
+                        <p:outputLabel value="#{bundle.CreateDimTipoLabel_pkTipo}" for="pkTipo" />
+                        <p:inputText id="pkTipo" value="#{dimTipoController.selected.pkTipo}" title="#{bundle.CreateDimTipoTitle_pkTipo}" required="true" requiredMessage="#{bundle.CreateDimTipoRequiredMessage_pkTipo}"/>
+                        <p:outputLabel value="#{bundle.CreateDimTipoLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{dimTipoController.selected.descripcion}" title="#{bundle.CreateDimTipoTitle_descripcion}" required="true" requiredMessage="#{bundle.CreateDimTipoRequiredMessage_descripcion}"/>
+                        <p:outputLabel value="#{bundle.CreateDimTipoLabel_validoDesde}" for="validoDesde" />
+                        <p:calendar id="validoDesde" pattern="MM/dd/yyyy" value="#{dimTipoController.selected.validoDesde}" title="#{bundle.EditDimTipoTitle_validoDesde}" required="true" requiredMessage="#{bundle.EditDimTipoRequiredMessage_validoDesde}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateDimTipoLabel_validoHasta}" for="validoHasta" />
+                        <p:calendar id="validoHasta" pattern="MM/dd/yyyy" value="#{dimTipoController.selected.validoHasta}" title="#{bundle.EditDimTipoTitle_validoHasta}" required="true" requiredMessage="#{bundle.EditDimTipoRequiredMessage_validoHasta}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateDimTipoLabel_version}" for="version" />
+                        <p:inputText id="version" value="#{dimTipoController.selected.version}" title="#{bundle.CreateDimTipoTitle_version}" required="true" requiredMessage="#{bundle.CreateDimTipoRequiredMessage_version}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{dimTipoController.create}" value="#{bundle.Save}" update="display,:DimTipoListForm:datalist,:growl" oncomplete="handleSubmit(args,'DimTipoCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="DimTipoCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

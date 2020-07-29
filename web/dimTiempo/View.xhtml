@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="DimTiempoViewDlg" widgetVar="DimTiempoViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewDimTiempoTitle}">
+            <h:form id="DimTiempoViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{dimTiempoController.selected != null}">
+                        <h:outputText value="#{bundle.ViewDimTiempoLabel_skTiempo}"/>
+                        <h:outputText value="#{dimTiempoController.selected.skTiempo}" title="#{bundle.ViewDimTiempoTitle_skTiempo}"/>
+                        <h:outputText value="#{bundle.ViewDimTiempoLabel_fecha}"/>
+                        <h:outputText value="#{dimTiempoController.selected.fecha}" title="#{bundle.ViewDimTiempoTitle_fecha}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewDimTiempoLabel_skTiempoKtl}"/>
+                        <h:outputText value="#{dimTiempoController.selected.skTiempoKtl}" title="#{bundle.ViewDimTiempoTitle_skTiempoKtl}"/>
+                        <h:outputText value="#{bundle.ViewDimTiempoLabel_anio}"/>
+                        <h:outputText value="#{dimTiempoController.selected.anio}" title="#{bundle.ViewDimTiempoTitle_anio}"/>
+                        <h:outputText value="#{bundle.ViewDimTiempoLabel_semestre}"/>
+                        <h:outputText value="#{dimTiempoController.selected.semestre}" title="#{bundle.ViewDimTiempoTitle_semestre}"/>
+                        <h:outputText value="#{bundle.ViewDimTiempoLabel_nombreSemestre}"/>
+                        <h:outputText value="#{dimTiempoController.selected.nombreSemestre}" title="#{bundle.ViewDimTiempoTitle_nombreSemestre}"/>
+                        <h:outputText value="#{bundle.ViewDimTiempoLabel_trimestre}"/>
+                        <h:outputText value="#{dimTiempoController.selected.trimestre}" title="#{bundle.ViewDimTiempoTitle_trimestre}"/>
+                        <h:outputText value="#{bundle.ViewDimTiempoLabel_nombreTrimestre}"/>
+                        <h:outputText value="#{dimTiempoController.selected.nombreTrimestre}" title="#{bundle.ViewDimTiempoTitle_nombreTrimestre}"/>
+                        <h:outputText value="#{bundle.ViewDimTiempoLabel_mes}"/>
+                        <h:outputText value="#{dimTiempoController.selected.mes}" title="#{bundle.ViewDimTiempoTitle_mes}"/>
+                        <h:outputText value="#{bundle.ViewDimTiempoLabel_nombreMes}"/>
+                        <h:outputText value="#{dimTiempoController.selected.nombreMes}" title="#{bundle.ViewDimTiempoTitle_nombreMes}"/>
+                        <h:outputText value="#{bundle.ViewDimTiempoLabel_dia}"/>
+                        <h:outputText value="#{dimTiempoController.selected.dia}" title="#{bundle.ViewDimTiempoTitle_dia}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="DimTiempoViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

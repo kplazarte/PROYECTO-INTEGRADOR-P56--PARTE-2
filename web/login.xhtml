@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>PROYECTO PERIODO 56</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+        <meta charset="utf-8" />
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/estilos.css" />
+    </h:head>
+    <h:body >
+        <header id="header">
+            <div class="inner">
+                <h1>
+                    <h:graphicImage value="/images/EMPRESAS.png" width="200px"
+                                    height="200px" dir="ltr"></h:graphicImage>
+                        <br></br> INTEGRANTES<br />KEVIN PLAZARTE<br />kplazarte@est.ups.edu.ec<br />DANIELA
+                        CAMPOVERDE<br />dcampoverdev2@est.ups.edu.ec<br />ALEJANDRO MARIN<br />kmarinm@est.ups.edu.ec<br />SEBASTIAN
+                        PAREDES<br />sparedese@est.ups.edu.ec<br />
+
+
+                    </h1>
+                </div>
+            </header>
+       <div id="main">
+
+                <section id="one"/> <header class="major"/> <header>
+                        </header>
+        <h:form>
+            <p:growl id="growl" life="3000"/>
+            <h:panelGrid columns="2" id="hpgLogin">
+                <p:outputLabel value="Usuario: "/>
+                <p:inputText required="true" value="#{loginBean.nombreUsuario}"/>
+                <p:outputLabel value="Contraseña: "/>
+                <p:inputText required="true" type="password" value="#{loginBean.password}"/><br/>
+                <p:commandButton value="Ingresar" update="hpgLogin, growl" action="#{loginBean.autenticar()}"/>
+            </h:panelGrid>
+        </h:form>
+        </div>
+    </h:body>
+</html>
+

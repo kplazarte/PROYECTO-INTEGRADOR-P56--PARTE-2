@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="DimProduccionCreateDlg" widgetVar="DimProduccionCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateDimProduccionTitle}">
+            <h:form id="DimProduccionCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{dimProduccionController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateDimProduccionLabel_skProduccion}" for="skProduccion" />
+                        <p:inputText id="skProduccion" value="#{dimProduccionController.selected.skProduccion}" title="#{bundle.CreateDimProduccionTitle_skProduccion}" required="true" requiredMessage="#{bundle.CreateDimProduccionRequiredMessage_skProduccion}"/>
+                        <p:outputLabel value="#{bundle.CreateDimProduccionLabel_pkProduccion}" for="pkProduccion" />
+                        <p:inputText id="pkProduccion" value="#{dimProduccionController.selected.pkProduccion}" title="#{bundle.CreateDimProduccionTitle_pkProduccion}" required="true" requiredMessage="#{bundle.CreateDimProduccionRequiredMessage_pkProduccion}"/>
+                        <p:outputLabel value="#{bundle.CreateDimProduccionLabel_personaocupada}" for="personaocupada" />
+                        <p:inputText id="personaocupada" value="#{dimProduccionController.selected.personaocupada}" title="#{bundle.CreateDimProduccionTitle_personaocupada}" required="true" requiredMessage="#{bundle.CreateDimProduccionRequiredMessage_personaocupada}"/>
+                        <p:outputLabel value="#{bundle.CreateDimProduccionLabel_produccionporhora}" for="produccionporhora" />
+                        <p:inputText id="produccionporhora" value="#{dimProduccionController.selected.produccionporhora}" title="#{bundle.CreateDimProduccionTitle_produccionporhora}" required="true" requiredMessage="#{bundle.CreateDimProduccionRequiredMessage_produccionporhora}"/>
+                        <p:outputLabel value="#{bundle.CreateDimProduccionLabel_validoDesde}" for="validoDesde" />
+                        <p:calendar id="validoDesde" pattern="MM/dd/yyyy" value="#{dimProduccionController.selected.validoDesde}" title="#{bundle.EditDimProduccionTitle_validoDesde}" required="true" requiredMessage="#{bundle.EditDimProduccionRequiredMessage_validoDesde}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateDimProduccionLabel_validoHasta}" for="validoHasta" />
+                        <p:calendar id="validoHasta" pattern="MM/dd/yyyy" value="#{dimProduccionController.selected.validoHasta}" title="#{bundle.EditDimProduccionTitle_validoHasta}" required="true" requiredMessage="#{bundle.EditDimProduccionRequiredMessage_validoHasta}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateDimProduccionLabel_version}" for="version" />
+                        <p:inputText id="version" value="#{dimProduccionController.selected.version}" title="#{bundle.CreateDimProduccionTitle_version}" required="true" requiredMessage="#{bundle.CreateDimProduccionRequiredMessage_version}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{dimProduccionController.create}" value="#{bundle.Save}" update="display,:DimProduccionListForm:datalist,:growl" oncomplete="handleSubmit(args,'DimProduccionCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="DimProduccionCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

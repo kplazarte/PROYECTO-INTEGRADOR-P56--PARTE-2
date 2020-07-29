@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="DimTiempoEditDlg" widgetVar="DimTiempoEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditDimTiempoTitle}">
+            <h:form id="DimTiempoEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{dimTiempoController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditDimTiempoLabel_skTiempo}" for="skTiempo" />
+                        <p:inputText id="skTiempo" value="#{dimTiempoController.selected.skTiempo}" title="#{bundle.EditDimTiempoTitle_skTiempo}" required="true" requiredMessage="#{bundle.EditDimTiempoRequiredMessage_skTiempo}"/>
+                        <p:outputLabel value="#{bundle.EditDimTiempoLabel_fecha}" for="fecha" />
+                        <p:calendar id="fecha" pattern="MM/dd/yyyy" value="#{dimTiempoController.selected.fecha}" title="#{bundle.EditDimTiempoTitle_fecha}" required="true" requiredMessage="#{bundle.EditDimTiempoRequiredMessage_fecha}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditDimTiempoLabel_skTiempoKtl}" for="skTiempoKtl" />
+                        <p:inputText id="skTiempoKtl" value="#{dimTiempoController.selected.skTiempoKtl}" title="#{bundle.EditDimTiempoTitle_skTiempoKtl}" />
+                        <p:outputLabel value="#{bundle.EditDimTiempoLabel_anio}" for="anio" />
+                        <p:inputText id="anio" value="#{dimTiempoController.selected.anio}" title="#{bundle.EditDimTiempoTitle_anio}" />
+                        <p:outputLabel value="#{bundle.EditDimTiempoLabel_semestre}" for="semestre" />
+                        <p:inputText id="semestre" value="#{dimTiempoController.selected.semestre}" title="#{bundle.EditDimTiempoTitle_semestre}" />
+                        <p:outputLabel value="#{bundle.EditDimTiempoLabel_nombreSemestre}" for="nombreSemestre" />
+                        <p:inputText id="nombreSemestre" value="#{dimTiempoController.selected.nombreSemestre}" title="#{bundle.EditDimTiempoTitle_nombreSemestre}" />
+                        <p:outputLabel value="#{bundle.EditDimTiempoLabel_trimestre}" for="trimestre" />
+                        <p:inputText id="trimestre" value="#{dimTiempoController.selected.trimestre}" title="#{bundle.EditDimTiempoTitle_trimestre}" />
+                        <p:outputLabel value="#{bundle.EditDimTiempoLabel_nombreTrimestre}" for="nombreTrimestre" />
+                        <p:inputText id="nombreTrimestre" value="#{dimTiempoController.selected.nombreTrimestre}" title="#{bundle.EditDimTiempoTitle_nombreTrimestre}" />
+                        <p:outputLabel value="#{bundle.EditDimTiempoLabel_mes}" for="mes" />
+                        <p:inputText id="mes" value="#{dimTiempoController.selected.mes}" title="#{bundle.EditDimTiempoTitle_mes}" />
+                        <p:outputLabel value="#{bundle.EditDimTiempoLabel_nombreMes}" for="nombreMes" />
+                        <p:inputText id="nombreMes" value="#{dimTiempoController.selected.nombreMes}" title="#{bundle.EditDimTiempoTitle_nombreMes}" />
+                        <p:outputLabel value="#{bundle.EditDimTiempoLabel_dia}" for="dia" />
+                        <p:inputText id="dia" value="#{dimTiempoController.selected.dia}" title="#{bundle.EditDimTiempoTitle_dia}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{dimTiempoController.update}" value="#{bundle.Save}" update="display,:DimTiempoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'DimTiempoEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="DimTiempoEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

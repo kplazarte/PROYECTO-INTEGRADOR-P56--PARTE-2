@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="DimConsumoIntermedioViewDlg" widgetVar="DimConsumoIntermedioViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewDimConsumoIntermedioTitle}">
+            <h:form id="DimConsumoIntermedioViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{dimConsumoIntermedioController.selected != null}">
+                        <h:outputText value="#{bundle.ViewDimConsumoIntermedioLabel_skConsumoIntermedio}"/>
+                        <h:outputText value="#{dimConsumoIntermedioController.selected.skConsumoIntermedio}" title="#{bundle.ViewDimConsumoIntermedioTitle_skConsumoIntermedio}"/>
+                        <h:outputText value="#{bundle.ViewDimConsumoIntermedioLabel_pkConintermedio}"/>
+                        <h:outputText value="#{dimConsumoIntermedioController.selected.pkConintermedio}" title="#{bundle.ViewDimConsumoIntermedioTitle_pkConintermedio}"/>
+                        <h:outputText value="#{bundle.ViewDimConsumoIntermedioLabel_mp}"/>
+                        <h:outputText value="#{dimConsumoIntermedioController.selected.mp}" title="#{bundle.ViewDimConsumoIntermedioTitle_mp}"/>
+                        <h:outputText value="#{bundle.ViewDimConsumoIntermedioLabel_suministros}"/>
+                        <h:outputText value="#{dimConsumoIntermedioController.selected.suministros}" title="#{bundle.ViewDimConsumoIntermedioTitle_suministros}"/>
+                        <h:outputText value="#{bundle.ViewDimConsumoIntermedioLabel_gastosOperacionales}"/>
+                        <h:outputText value="#{dimConsumoIntermedioController.selected.gastosOperacionales}" title="#{bundle.ViewDimConsumoIntermedioTitle_gastosOperacionales}"/>
+                        <h:outputText value="#{bundle.ViewDimConsumoIntermedioLabel_validoDesde}"/>
+                        <h:outputText value="#{dimConsumoIntermedioController.selected.validoDesde}" title="#{bundle.ViewDimConsumoIntermedioTitle_validoDesde}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewDimConsumoIntermedioLabel_validoHasta}"/>
+                        <h:outputText value="#{dimConsumoIntermedioController.selected.validoHasta}" title="#{bundle.ViewDimConsumoIntermedioTitle_validoHasta}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewDimConsumoIntermedioLabel_version}"/>
+                        <h:outputText value="#{dimConsumoIntermedioController.selected.version}" title="#{bundle.ViewDimConsumoIntermedioTitle_version}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="DimConsumoIntermedioViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

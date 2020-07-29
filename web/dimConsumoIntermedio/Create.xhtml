@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="DimConsumoIntermedioCreateDlg" widgetVar="DimConsumoIntermedioCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateDimConsumoIntermedioTitle}">
+            <h:form id="DimConsumoIntermedioCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{dimConsumoIntermedioController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateDimConsumoIntermedioLabel_skConsumoIntermedio}" for="skConsumoIntermedio" />
+                        <p:inputText id="skConsumoIntermedio" value="#{dimConsumoIntermedioController.selected.skConsumoIntermedio}" title="#{bundle.CreateDimConsumoIntermedioTitle_skConsumoIntermedio}" required="true" requiredMessage="#{bundle.CreateDimConsumoIntermedioRequiredMessage_skConsumoIntermedio}"/>
+                        <p:outputLabel value="#{bundle.CreateDimConsumoIntermedioLabel_pkConintermedio}" for="pkConintermedio" />
+                        <p:inputText id="pkConintermedio" value="#{dimConsumoIntermedioController.selected.pkConintermedio}" title="#{bundle.CreateDimConsumoIntermedioTitle_pkConintermedio}" required="true" requiredMessage="#{bundle.CreateDimConsumoIntermedioRequiredMessage_pkConintermedio}"/>
+                        <p:outputLabel value="#{bundle.CreateDimConsumoIntermedioLabel_mp}" for="mp" />
+                        <p:inputText id="mp" value="#{dimConsumoIntermedioController.selected.mp}" title="#{bundle.CreateDimConsumoIntermedioTitle_mp}" required="true" requiredMessage="#{bundle.CreateDimConsumoIntermedioRequiredMessage_mp}"/>
+                        <p:outputLabel value="#{bundle.CreateDimConsumoIntermedioLabel_suministros}" for="suministros" />
+                        <p:inputText id="suministros" value="#{dimConsumoIntermedioController.selected.suministros}" title="#{bundle.CreateDimConsumoIntermedioTitle_suministros}" required="true" requiredMessage="#{bundle.CreateDimConsumoIntermedioRequiredMessage_suministros}"/>
+                        <p:outputLabel value="#{bundle.CreateDimConsumoIntermedioLabel_gastosOperacionales}" for="gastosOperacionales" />
+                        <p:inputText id="gastosOperacionales" value="#{dimConsumoIntermedioController.selected.gastosOperacionales}" title="#{bundle.CreateDimConsumoIntermedioTitle_gastosOperacionales}" required="true" requiredMessage="#{bundle.CreateDimConsumoIntermedioRequiredMessage_gastosOperacionales}"/>
+                        <p:outputLabel value="#{bundle.CreateDimConsumoIntermedioLabel_validoDesde}" for="validoDesde" />
+                        <p:calendar id="validoDesde" pattern="MM/dd/yyyy" value="#{dimConsumoIntermedioController.selected.validoDesde}" title="#{bundle.EditDimConsumoIntermedioTitle_validoDesde}" required="true" requiredMessage="#{bundle.EditDimConsumoIntermedioRequiredMessage_validoDesde}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateDimConsumoIntermedioLabel_validoHasta}" for="validoHasta" />
+                        <p:calendar id="validoHasta" pattern="MM/dd/yyyy" value="#{dimConsumoIntermedioController.selected.validoHasta}" title="#{bundle.EditDimConsumoIntermedioTitle_validoHasta}" required="true" requiredMessage="#{bundle.EditDimConsumoIntermedioRequiredMessage_validoHasta}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateDimConsumoIntermedioLabel_version}" for="version" />
+                        <p:inputText id="version" value="#{dimConsumoIntermedioController.selected.version}" title="#{bundle.CreateDimConsumoIntermedioTitle_version}" required="true" requiredMessage="#{bundle.CreateDimConsumoIntermedioRequiredMessage_version}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{dimConsumoIntermedioController.create}" value="#{bundle.Save}" update="display,:DimConsumoIntermedioListForm:datalist,:growl" oncomplete="handleSubmit(args,'DimConsumoIntermedioCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="DimConsumoIntermedioCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

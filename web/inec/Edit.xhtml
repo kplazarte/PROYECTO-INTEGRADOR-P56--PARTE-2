@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="InecEditDlg" widgetVar="InecEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditInecTitle}">
+            <h:form id="InecEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{inecController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditInecLabel_dimConsumoIntermedio}" for="dimConsumoIntermedio" />
+                        <p:selectOneMenu id="dimConsumoIntermedio" value="#{inecController.selected.dimConsumoIntermedio}" required="true" requiredMessage="#{bundle.EditInecRequiredMessage_dimConsumoIntermedio}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{dimConsumoIntermedioController.itemsAvailableSelectOne}"
+                                           var="dimConsumoIntermedioItem"
+                                           itemValue="#{dimConsumoIntermedioItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditInecLabel_dimProduccion}" for="dimProduccion" />
+                        <p:selectOneMenu id="dimProduccion" value="#{inecController.selected.dimProduccion}" required="true" requiredMessage="#{bundle.EditInecRequiredMessage_dimProduccion}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{dimProduccionController.itemsAvailableSelectOne}"
+                                           var="dimProduccionItem"
+                                           itemValue="#{dimProduccionItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditInecLabel_dimTiempo}" for="dimTiempo" />
+                        <p:selectOneMenu id="dimTiempo" value="#{inecController.selected.dimTiempo}" required="true" requiredMessage="#{bundle.EditInecRequiredMessage_dimTiempo}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{dimTiempoController.itemsAvailableSelectOne}"
+                                           var="dimTiempoItem"
+                                           itemValue="#{dimTiempoItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditInecLabel_dimTipo}" for="dimTipo" />
+                        <p:selectOneMenu id="dimTipo" value="#{inecController.selected.dimTipo}" required="true" requiredMessage="#{bundle.EditInecRequiredMessage_dimTipo}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{dimTipoController.itemsAvailableSelectOne}"
+                                           var="dimTipoItem"
+                                           itemValue="#{dimTipoItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{inecController.update}" value="#{bundle.Save}" update="display,:InecListForm:datalist,:growl" oncomplete="handleSubmit(args, 'InecEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="InecEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="DimProduccionViewDlg" widgetVar="DimProduccionViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewDimProduccionTitle}">
+            <h:form id="DimProduccionViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{dimProduccionController.selected != null}">
+                        <h:outputText value="#{bundle.ViewDimProduccionLabel_skProduccion}"/>
+                        <h:outputText value="#{dimProduccionController.selected.skProduccion}" title="#{bundle.ViewDimProduccionTitle_skProduccion}"/>
+                        <h:outputText value="#{bundle.ViewDimProduccionLabel_pkProduccion}"/>
+                        <h:outputText value="#{dimProduccionController.selected.pkProduccion}" title="#{bundle.ViewDimProduccionTitle_pkProduccion}"/>
+                        <h:outputText value="#{bundle.ViewDimProduccionLabel_personaocupada}"/>
+                        <h:outputText value="#{dimProduccionController.selected.personaocupada}" title="#{bundle.ViewDimProduccionTitle_personaocupada}"/>
+                        <h:outputText value="#{bundle.ViewDimProduccionLabel_produccionporhora}"/>
+                        <h:outputText value="#{dimProduccionController.selected.produccionporhora}" title="#{bundle.ViewDimProduccionTitle_produccionporhora}"/>
+                        <h:outputText value="#{bundle.ViewDimProduccionLabel_validoDesde}"/>
+                        <h:outputText value="#{dimProduccionController.selected.validoDesde}" title="#{bundle.ViewDimProduccionTitle_validoDesde}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewDimProduccionLabel_validoHasta}"/>
+                        <h:outputText value="#{dimProduccionController.selected.validoHasta}" title="#{bundle.ViewDimProduccionTitle_validoHasta}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewDimProduccionLabel_version}"/>
+                        <h:outputText value="#{dimProduccionController.selected.version}" title="#{bundle.ViewDimProduccionTitle_version}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="DimProduccionViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
