@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="dimTipo/Create.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="usuarios/List.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="welcomePrimefaces.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="dimConsumoIntermedio/List.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="dimConsumoIntermedio/Create.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="inec/Edit.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="dimProduccion/Create.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="reportes.xhtml" x="1113" y="218" zoom="true"/>
+        <Node id="dimProduccion/List.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="dimTiempo/Edit.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="dimProduccion/View.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="inec/View.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="template.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="dimTiempo/List.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="dimConsumoIntermedio/View.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="dimConsumoIntermedio/Edit.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="dimTiempo/Create.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="dimProduccion/Edit.xhtml" x="1900" y="150" zoom="true"/>
+        <Node id="dimTipo/Edit.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="index.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="login2.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="dimTiempo/View.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="usuarios/Create.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="inec/List.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="login.xhtml" x="805" y="44" zoom="true"/>
+        <Node id="dimTipo/List.xhtml" x="1400" y="450" zoom="true"/>
+        <Node id="principal.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="dimTipo/View.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="usuarios/Edit.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="usuarios/View.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="inec/Create.xhtml" x="650" y="600" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

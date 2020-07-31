@@ -22,33 +22,21 @@
 	</div>
 	</header>
 	<div id="main">
-		<h2>Bienvenido Kevin Plazarte</h2>
+            <h2>Bienvenido #{loginBean.nombreUsuario}</h2>
 		<h:graphicImage value="/images/administrador.jpg" width="900px"
-			height="500px" dir="center"></h:graphicImage>
+			height="400px" dir="center"></h:graphicImage>
 		<br></br> <br></br>
 		<ul class="actions">
-			<li><a><h:button  value="Ingresar Usuario"
+			
+                    </ul>
+                    <iframe src="usuarios/List.xhtml" width="900px" height="400px"/>             
+		<li><a><h:button  value="Administrar Usuarios" 
                                outcome="/usuarios/List"></h:button> </a></li>
-			<li><a><h:button  value="Modificar usuario"
-                               outcome="login.xhtml"></h:button></a></li>
-			<li><a><h:button  value="Bloquear usuario"
-                               outcome="login.xhtml"></h:button></a></li>
-			<li><a><h:button  value="Consultar usuario"
-                               outcome="login.xhtml"></h:button></a></li>
-			<li><a><h:button  value="Registro de actividades"
-                               outcome="login.xhtml"></h:button></a></li>
-			<li><a><h:button  value="Ingresar Administrador"
-                               outcome="login.xhtml"></h:button></a></li>
-                              
-		</ul>
-                <h:link outcome="/usuarios/New" value="Show All Usuarios Items"/>
+                    <li><a><h:button  value="Salir" 
+                               outcome="principal.xhtml" ></h:button> </a></li>
+            
 	</div>
 </h:body>
-
-
-
-
-
 
 </html>
 

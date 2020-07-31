@@ -38,5 +38,13 @@ public class UsuariosFacade extends AbstractFacade<Usuarios> {
         }
         return null;
     }
+    public Usuarios encontrarUsuarioxlogin2(String nombreUsuario){
+        Query q=em.createNamedQuery("Usuarios.findByUsuario",Usuarios.class).setParameter("usuario",nombreUsuario);
+        List <Usuarios> listado=q.getResultList();
+        if(!listado.isEmpty()){
+            return listado.get(0);
+        }
+        return null;
+    }
     
 }

@@ -81,11 +81,11 @@ public class Usuarios implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "bloqueo")
-    private String bloqueo;
+    private int bloqueo;
     @Basic(optional = false)
     @NotNull
     @Column(name = "tipo")
-    private String tipo;
+    private int tipo;
 
     public Usuarios() {
     }
@@ -94,7 +94,7 @@ public class Usuarios implements Serializable {
         this.cedula = cedula;
     }
 
-    public Usuarios(Integer cedula, String nombre, String apellido, int edad, String direccion, String correo, String usuario, String contraseña, String bloqueo, String tipo) {
+    public Usuarios(Integer cedula, String nombre, String apellido, int edad, String direccion, String correo, String usuario, String contraseña, int bloqueo, int tipo) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -171,19 +171,19 @@ public class Usuarios implements Serializable {
         this.contraseña = contraseña;
     }
 
-    public String getBloqueo() {
+    public int getBloqueo() {
         return bloqueo;
     }
 
-    public void setBloqueo(String bloqueo) {
+    public void setBloqueo(int bloqueo) {
         this.bloqueo = bloqueo;
     }
 
-    public String getTipo() {
+    public int getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(int tipo) {
         this.tipo = tipo;
     }
 

@@ -8,7 +8,7 @@
 
     <ui:composition>
 
-        <p:dialog id="UsuariosViewDlg" widgetVar="UsuariosViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewUsuariosTitle}">
+        <p:dialog id="UsuariosViewDlg" widgetVar="UsuariosViewDialog" modal="true" resizable="false" appendTo="@(body)" header="Ver Usuario">
             <h:form id="UsuariosViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{usuariosController.selected != null}">
@@ -33,7 +33,7 @@
                         <h:outputText value="#{bundle.ViewUsuariosLabel_tipo}"/>
                         <h:outputText value="#{usuariosController.selected.tipo}" title="#{bundle.ViewUsuariosTitle_tipo}"/>
                     </p:panelGrid>
-                    <p:commandButton value="#{bundle.Close}" onclick="UsuariosViewDialog.hide()"/>
+                    <p:commandButton value="Cerrar" onclick="UsuariosViewDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>
