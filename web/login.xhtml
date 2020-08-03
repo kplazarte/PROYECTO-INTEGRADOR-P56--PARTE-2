@@ -38,7 +38,7 @@
                 <p:inputText required="true" value="#{loginBean.nombreUsuario}" requiredMessage="Ingrese su usuario" />
                 <p:outputLabel value="Contraseña: "/>
                 <p:inputText required="true" type="password" value="#{loginBean.password}" requiredMessage="Ingrese su contraseña"/><br/>
-                <p:commandButton value="Ingresar" update="hpgLogin, growl" action="#{loginBean.autenticar()}" oncomplete="#{loginBean.clear()}"/>
+                <p:commandButton ajax="false" value="Ingresar" update="hpgLogin, growl" action="#{loginBean.autenticar()}" oncomplete="#{loginBean.clear()}"/>
                     
                 
                    

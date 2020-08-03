@@ -71,7 +71,7 @@ public class LoginBean implements Serializable {
                         return "ingresar";
                         
                      }
-                    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "El usuario no es administrador","El usuario no es administrador"));
+               FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "El usuario no es administrador","El usuario no es administrador"));     
          return null;  
                  }
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "El usuario esta bloqueado","El usuario esta bloqueado"));
@@ -83,18 +83,16 @@ public class LoginBean implements Serializable {
          FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "El usuario no existe","El usuario no existe"));
          return null;
     }
-    public String autenticarUsuario(){
-         int a=0;
-         int b=2;
-         usuarioAutenticado=usuFacade.encontrarUsuarioxlogin2(nombreUsuario);
+    public String autenticar2(){
+         usuarioAutenticado=usuFacade.encontrarUsuarioxlogin(nombreUsuario);
          if(usuarioAutenticado!=null){
              if(usuarioAutenticado.getContraseña().equals(password)){
-                 if(usuarioAutenticado.getBloqueo()==a){
-                     if(usuarioAutenticado.getTipo()==b){
+                 if(usuarioAutenticado.getBloqueo()==0){
+                     if(usuarioAutenticado.getTipo()==2){
                         return "entrar";
                         
                      }
-                    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "La cuenta no es usuario","La cuenta no es usuario"));
+              FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "La cuenta no es usuario ","La cuenta no es usuario "));      
          return null;  
                  }
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "El usuario esta bloqueado","El usuario esta bloqueado"));
@@ -106,9 +104,10 @@ public class LoginBean implements Serializable {
          FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "El usuario no existe","El usuario no existe"));
          return null;
     }
-    public void clear(){
+    
+    public String clear(){
         
-        
+        return "salir";
     }
     
 }

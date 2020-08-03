@@ -33,11 +33,16 @@
         <h:form>
             <p:growl id="growl" life="3000"/>
             <h:panelGrid columns="2" id="hpgLogin">
-                <p:outputLabel value="Usuario:" />
-                <p:inputText required="true" />
-                <p:outputLabel value="Contraseña:"/>
-                <p:inputText required="true" type="password" /><br/>
-                <p:button value="entrar" outcome="reportes.xhtml" />
+                <p:outputLabel value="Usuario: "/>
+                <p:inputText required="true" value="#{loginBean.nombreUsuario}" requiredMessage="Ingrese su usuario" />
+                <p:outputLabel value="Contraseña: "/>
+                <p:inputText required="true" type="password" value="#{loginBean.password}" requiredMessage="Ingrese su contraseña"/><br/>
+                <p:commandButton ajax="false" value="Ingresar" update="hpgLogin, growl" action="#{loginBean.autenticar2()}" oncomplete="#{loginBean.clear()}"/>
+                    
+                
+                   
+                
+               
             </h:panelGrid>
         </h:form>
         </div>
